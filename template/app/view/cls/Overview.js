@@ -244,7 +244,7 @@ Ext.define('Docs.view.cls.Overview', {
             var name = m.name;
 
             // List of all supported platforms
-            var availablePlatforms = ["android", "ipad", "iphone", "mobileweb", "blackberry", "tizen"];
+            var availablePlatforms = ["android", "ipad", "iphone", "mobileweb", "windowsphone"];
 
             m.meta.platforms = {};
             m.meta.classPlatforms = {};
@@ -306,8 +306,7 @@ Ext.define('Docs.view.cls.Overview', {
                     show['ipad'] && m.meta.platforms["ipad"] && m.meta.classPlatforms["ipad"] ||
                     show['iphone'] && m.meta.platforms["iphone"] && m.meta.classPlatforms["iphone"] ||
                     show['mobileweb'] && m.meta.platforms["mobileweb"] && m.meta.classPlatforms["mobileweb"] ||
-                    show['tizen'] && m.meta.platforms["tizen"] && m.meta.classPlatforms["tizen"] ||
-                    show['blackberry'] && m.meta.platforms["blackberry"] && m.meta.classPlatforms["blackberry"]) ||
+                    show['windowsphone'] && m.meta.platforms["windowsphone"] && m.meta.classPlatforms["windowsphone"]) ||
                     isSearch           && !re.test(m.name)
                 );                
             } else {

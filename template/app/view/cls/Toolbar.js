@@ -104,7 +104,7 @@ Ext.define('Docs.view.cls.Toolbar', {
             "iphone": this.createCb("iPhone", "iphone"),
             "ipad": this.createCb("iPad", "ipad"),
             "mobileweb": this.createCb("Mobile Web", "mobileweb"),
-            "tizen": this.createCb("Tizen", "tizen")
+            "windowsphone": this.createCb("Windows Phone", "windowsphone")
         };
 
         var self = this;
@@ -252,8 +252,7 @@ Ext.define('Docs.view.cls.Toolbar', {
                             show['ipad'] && m.data.meta.platforms["ipad"] && m.data.meta.classPlatforms["ipad"] ||
                             show['iphone'] && m.data.meta.platforms["iphone"] && m.data.meta.classPlatforms["iphone"] ||
                             show['mobileweb'] && m.data.meta.platforms["mobileweb"] && m.data.meta.classPlatforms["mobileweb"] ||
-                            show['tizen'] && m.data.meta.platforms["tizen"] && m.data.meta.classPlatforms["tizen"] ||
-                            show['blackberry'] &&  m.data.meta.platforms["blackberry"] && m.data.meta.classPlatforms["blackberry"]) ||
+                            show['windowsphone'] && m.data.meta.platforms["windowsphone"] && m.data.meta.classPlatforms["windowsphone"]) ||
                             isSearch           && !re.test(m.get("label"))
                         );
                     } else {
@@ -343,7 +342,7 @@ Ext.define('Docs.view.cls.Toolbar', {
                 this.checkItems['ipad'],                    
                 this.checkItems['iphone'],                    
                 this.checkItems['mobileweb'],
-                this.checkItems['tizen'],                    
+                this.checkItems['windowsphone'],
                 '-',
                 this.checkItems['inherited'],
                 this.checkItems['accessor'],

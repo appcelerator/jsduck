@@ -22,7 +22,7 @@ Ext.define("Docs.Settings", {
             "iphone": true,
             "ipad": true,
             "mobileweb": true,
-            "tizen": true
+            "windowsphone": true
         },
         comments: {
             hideRead: false
