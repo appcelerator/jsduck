@@ -100,7 +100,6 @@ Ext.define('Docs.view.cls.Toolbar', {
             "deprecated": this.createCb("Deprecated", "deprecated"),
             "removed": this.createCb("Removed", "removed"),
             "android": this.createCb("Android", "android"),
-            "blackberry": this.createCb("Blackberry", "blackberry"),
             "iphone": this.createCb("iPhone", "iphone"),
             "ipad": this.createCb("iPad", "ipad"),
             "mobileweb": this.createCb("Mobile Web", "mobileweb"),
@@ -338,7 +337,6 @@ Ext.define('Docs.view.cls.Toolbar', {
         if(!Docs.isRESTDoc) {
             return [
                 this.checkItems['android'],
-                this.checkItems['blackberry'],                    
                 this.checkItems['ipad'],                    
                 this.checkItems['iphone'],                    
                 this.checkItems['mobileweb'],

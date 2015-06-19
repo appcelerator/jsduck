@@ -18,7 +18,6 @@ Ext.define("Docs.Settings", {
             "inherited": true,
             "accessor": true,
             "android": true,
-            "blackberry": true,
             "iphone": true,
             "ipad": true,
             "mobileweb": true,
