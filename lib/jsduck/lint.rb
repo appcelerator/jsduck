@@ -15,7 +15,7 @@ module JsDuck
     def run
       warn_no_doc
       warn_unnamed
-      warn_optional_params
+      #warn_optional_params
       warn_duplicate_params
       warn_duplicate_members
       warn_singleton_statics

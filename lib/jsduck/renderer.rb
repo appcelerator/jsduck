@@ -215,7 +215,7 @@ module JsDuck
     end
 
     def render_all_sections
-      properties = (@opts.rest && "Fields") || "Properties"
+      properties = (@cls.has_key?(:rest) && "Fields")  || "Properties"
       sections = [
         {:type => :property, :title => properties },
         {:type => :method, :title => "Methods"},
@@ -334,7 +334,7 @@ module JsDuck
 
       doc << render_params_and_return(m)
 
-      if @opts.rest
+      if @cls.has_key?(:rest)
           doc << render_examples(m)
       end
 
@@ -378,7 +378,7 @@ module JsDuck
         ]
       end
 
-      if @opts.rest
+      if @cls.has_key?(:rest)
         if item[:response] && item[:response].length > 0
           doc << '<h3 class="pa">Response Parameters</h3>'
           doc << [
@@ -405,7 +405,7 @@ module JsDuck
 
     def render_long_param(p)
       # for REST, default to optional parameters
-      if @opts.rest
+      if @cls.has_key?(:rest)
         optional = ""
         required = ' <strong class="required signature">required</strong>'
         adminRequired = ' <strong class="signature">admin-only</strong>'

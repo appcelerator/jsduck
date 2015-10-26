@@ -65,7 +65,8 @@ module JsDuck
                 :meta => {},
                 :aliases => {},
                 :files => [ @fakefile ],
-                :members => []
+                :members => [],
+                :rest => true
             }
             objects << @currentObject
         elsif item[0] == "description"

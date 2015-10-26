@@ -11,6 +11,7 @@ module JsDuck
   # Keeps command line options
   class Options
     attr_accessor :input_files
+    attr_accessor :rest_files
 
     attr_accessor :output_dir
     attr_accessor :ignore_global
@@ -61,6 +62,7 @@ module JsDuck
 
     def initialize
       @input_files = []
+      @rest_files = []
 
       @output_dir = nil
       @ignore_global = false
@@ -629,6 +631,19 @@ module JsDuck
           @rest = true
           # automatically disable source for YML input -- no source files to link to.
           @source = false
+        end
+
+        opts.on('--rest_files=FNAME', "", "") do |fname|
+          fname_pattern = "/**/*.{yml}"
+          if File.exists?(fname)
+            if File.directory?(fname)
+              Dir[fname+fname_pattern].each {|f| @rest_files << f }
+            else
+              @rest_files << fname
+            end
+          else
+            Logger.warn(nil, "File not found", fname)
+          end
         end
 
         opts.on('--stats',

@@ -28,6 +28,11 @@ module JsDuck
     # Parses the files and returns instance of Relations class.
     def run
       @parsed_files = parallel_parse(@opts.input_files)
+      if @opts.rest_files.length != 0
+        @opts.rest = true
+        @parsed_files.concat(parallel_parse(@opts.rest_files))
+        @opts.rest = false
+      end
       result = aggregate(@parsed_files)
       @relations = filter_classes(result)
       if ! @opts.rest

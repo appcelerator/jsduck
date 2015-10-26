@@ -15,7 +15,7 @@ module JsDuck
     def render(member)
       # Keep the code simpler by not passing around the member hash
       @m = member
-      if @opts.rest
+      if @cls.has_key?(:rest)
         return [
           render_rest,
           render_link,
@@ -67,7 +67,7 @@ module JsDuck
     def render_type
       if like_property?
         render_property_type
-      elsif ! @opts.rest && @m[:tagname] != :event
+      elsif ! @cls.has_key?(:rest) && @m[:tagname] != :event
         render_params + render_return
       end
     end

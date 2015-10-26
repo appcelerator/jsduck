@@ -17,6 +17,9 @@ module JsDuck
 
         FileUtils.mkdir(destination)
         Util::Parallel.each(@source_files) do |file|
+          if file.html_filename.nil?
+            next
+          end
           Logger.log("Writing source", file.html_filename)
           write_single(destination + "/" + file.html_filename, file.to_html)
         end
@@ -38,8 +41,10 @@ module JsDuck
             ci_name = name.downcase # case insensitive name
             i += 1
           end while filenames.has_key?(ci_name)
-          filenames[ci_name] = true
-          file.html_filename = name
+          if not name.include? ".yml"
+            filenames[ci_name] = true
+            file.html_filename = name
+          end
         end
       end
 
@@ -54,7 +59,9 @@ module JsDuck
       end
 
       def write_single(filename, source)
-        ::File.open(filename, 'w') {|f| f.write(wrap_page(source)) }
+        if not filename.nil?
+          ::File.open(filename, 'w') {|f| f.write(wrap_page(source)) }
+        end
       end
 
       # Returns source wrapped inside HTML page

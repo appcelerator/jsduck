@@ -14,7 +14,7 @@ module JsDuck
           :isObject => isObject(cls)
         })
         # TIDOC-1071 Modifications to support Cloud DocTree
-        if opts.rest
+        if defined? cls.rest
           cls[:members].each do |member|
             if member[:tagname].eql? :method and not(member[:deprecated])
               json.push({

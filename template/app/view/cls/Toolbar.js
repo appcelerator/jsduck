@@ -63,7 +63,7 @@ Ext.define('Docs.view.cls.Toolbar', {
 
         var memberTitles = {
             cfg: "Configs",
-            property: (Docs.isRESTDoc ? "Fields" : "Properties"),
+            property: (this.docClass.rest ? "Fields" : "Properties"),
             method: "Methods",
             event: "Events",
             css_var: "CSS Vars",
@@ -236,9 +236,10 @@ Ext.define('Docs.view.cls.Toolbar', {
     showMenuItems: function(show, isSearch, re) {
         Ext.Array.forEach(['cfg', 'property', 'method', 'event'], function(type) {
             if (this.memberButtons[type]) {
-                var store = this.memberButtons[type].getStore();
+                var store = this.memberButtons[type].getStore(),
+                    currentContext = this;
                 store.filterBy(function(m) {
-                    if(!Docs.isRESTDoc && (show['android'] != undefined)) {
+                    if(!currentContext.docClass.rest && (show['android'] != undefined)) {
                         return !(
                             !show['public']    && !(m.get("meta")["private"] || m.get("meta")["protected"]) ||
                             !show['protected'] && m.get("meta")["protected"] ||
@@ -334,7 +335,7 @@ Ext.define('Docs.view.cls.Toolbar', {
 
     // Returns menu items to display in Filter menu based. If showing REST APIs, only show deprecated and removed.
     getMenuItems: function() {
-        if(!Docs.isRESTDoc) {
+        if(!this.docClass.rest) {
             return [
                 this.checkItems['android'],
                 this.checkItems['ipad'],                    
