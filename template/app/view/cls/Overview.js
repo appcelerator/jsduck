@@ -238,7 +238,8 @@ Ext.define('Docs.view.cls.Overview', {
 
         // Only show members who's name matches with the search string
         // and its type is currently visible
-        var re = new RegExp(Ext.String.escapeRegex(search), "i");
+        var re = new RegExp(Ext.String.escapeRegex(search), "i"),
+            currentContext = this;
         this.eachMember(function(m) {
 
             var name = m.name;
@@ -292,7 +293,7 @@ Ext.define('Docs.view.cls.Overview', {
 
             // For ACS REST and Alloy APIs, don't apply platform filtering, or if the platform filters are undefined.
             // Assuming if any one of the platform filters is undefined ('android' in this case), they're all undefined.
-            if (!Docs.isRESTDoc && (m.owner.indexOf("Alloy") == -1) && (show['android'] != undefined)) {
+            if (!currentContext.docClass.rest && (m.owner.indexOf("Alloy") == -1) && (show['android'] != undefined)) {
                 // Only show if the member- and class-specified platforms intersects with the platform filter selection.
                 var visible = !(
                     !show['public']    && !(m.meta['private'] || m.meta['protected']) ||
