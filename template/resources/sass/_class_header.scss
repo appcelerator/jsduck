@@ -83,8 +83,7 @@
     top: 5px;
     display: block;
     text-indent: -9999px;
-    width: 32px;
-    height: 32px;
+    background-size: 32px 32px;
     // Adjust in bottom-left direction in guides context
     &.guide {
       right: 15px;
