@@ -36,7 +36,7 @@ Ext.define('Docs.view.cls.Header', {
             '</h1>',
             '{[this.renderEditButton(values)]}',
             '<tpl if="Docs.data.showPrintButton">',
-                '<a class="print" href="?print=/api/{name}" target="_blank">Print</a>',
+                '<a class="print fa-print" href="?print=/api/{name}" target="_blank">Print</a>',
             '</tpl>',
             {
                 renderEditButton: function (cls) {

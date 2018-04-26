@@ -34,30 +34,37 @@
 
     .platform-android {
         background-image: url(../images/icon_android.png);
+        background-size: 25px 28px;
     }
 
     .platform-iphone {
         background-image: url(../images/icon_iphone.png);
+        background-size: 28px 28px;
     }
 
     .platform-ipad {
         background-image: url(../images/icon_ipad.png);
+        background-size: 28px 28px;
     }
 
     .platform-mobileweb {
         background-image: url(../images/icon_mobileweb.png);
+        background-size: 26px 26px;
     }
 
     .platform-tizen {
         background-image: url(../images/icon_tizen.png);
+        background-size: 28px 28px;
     } 
 
     .platform-blackberry {
         background-image: url(../images/icon_blackberry.png);
+        background-size: 28px 28px;
     }
 
     .platform-windowsphone {
         background-image: url(../images/icon_windowsphone.png);
+        background-size: 25px 28px;
     }
 }
 
@@ -71,4 +78,3 @@
 #editButton {
 	display: none;
 }
-
