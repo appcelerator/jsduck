@@ -48,24 +48,46 @@ $appc-red: #9B1C1F;
 
     .thumb-list {
         h2 {
-            border-bottom: 2px solid $appc-gray !important;
+            border-bottom: 1px solid #cacaca !important;
 
             div {
                 color: #314e64 !important;
-                font-size: 14pt !important;
+                font-size: 13pt !important;
             }
         }
 
-        dd h4 {
-            font-size: 10pt !important;
-            padding: 5px 0 !important;
+        dd {
+            height: auto!important;
+            width: auto!important;
+            margin: 20px 10px 0 0;
+
+            h4 {
+                font-size: 11pt !important;
+                padding: 5px 0 !important;
+                line-height: 22px;
+                text-align: center;
+            }
+
+            .thumb {
+                display: none;
+            }
+
+            div {
+                float: none;
+                margin-left: 0;
+                width: auto;
+                background: #f9f9f9;
+                padding: 10px 15px;
+            }
         }
     }
 
     .class-categories {
         .section {
-            background: none;
+            background: #fbfbfb;
             border: none;
+            -webkit-box-shadow: 0 2px 6px #e8e8e8;
+            box-shadow: 0 2px 6px #e8e8e8;
 
             h1 {
                 color: $appc-gray !important;
@@ -267,6 +289,15 @@ $appc-red: #9B1C1F;
 .classheader #editButton {
     top: 8px;
     right: 35px;
+}
+
+#center-container .print {
+    background-image: url(../images/print.png);
+    right: 15px;
+    top: 13px;
+    width: 20px;
+    height: 20px;
+    background-size: 20px 20px;
 }
 
 #platformComparison {
@@ -471,4 +502,22 @@ $appc-red: #9B1C1F;
 // fix for missing confluence float right
 .confluence-embedded-image.image-right {
 	float: right;
+}
+
+.doctabs .doctab .m a.tabUrl {
+    padding: 0 9px 0 12px;
+}
+
+.doctabs .doctab .m a.main-tab {
+    padding: 0 14px 0 19px;
+}
+
+.guide-overview {
+    margin-bottom: 20px;
+}
+
+#treecontainer .x-grid-cell-inner {
+    .icon-guide, .icon-class {
+        display: none;
+    }
 }
