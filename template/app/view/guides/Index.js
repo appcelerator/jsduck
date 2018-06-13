@@ -29,7 +29,7 @@ Ext.define('Docs.view.guides.Index', {
                 commentType: "guide",
                 itemTpl: [
 				// Ti change -- icon change next line
-                    '<dd ext:url="#!/guide/{name}"><div class="thumb"><img src="resources/images/icon-lg.png"/></div>',
+                    '<dd ext:url="#!/guide/{name}">',
                         '<div><h4>{title}</h4><p>{description}</p></div>',
                     '</dd>'
                 ],
