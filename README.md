@@ -6,7 +6,7 @@ JSDuck for Titanium
 
 This is the Appcelerator fork of JSDuck, which contains several modifications to
 support Titanium and Alloy documentation. The [doctools](https://github.com/appcelerator/doctools) 
-repo contains related scripts and configuration files for building the docs.
+repository contains related scripts and configuration files for building the docs.
 
 API documentation generator for Sencha JavaScript frameworks.
 
