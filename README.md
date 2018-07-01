@@ -1,8 +1,6 @@
-JSDuck for Titanium
-===================
-=======
-![JSDuck](https://raw.github.com/senchalabs/jsduck/master/opt/jsduck-logo-dark.png)
-===================================================================================
+# JSDuck for Titanium
+
+<img src="https://raw.github.com/senchalabs/jsduck/master/opt/jsduck-logo-dark.png" height="50" />
 
 This is the Appcelerator fork of JSDuck, which contains several modifications to
 support Titanium and Alloy documentation. The [doctools](https://github.com/appcelerator/doctools) 
