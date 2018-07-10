@@ -70,7 +70,7 @@ Ext.define('Docs.view.Tabs', {
                     '<span class="icn {iconCls}">&nbsp;</span>',
                     '<a class="tabUrl main-tab" href="{href}">{text}</a>',
                 '</div>',
-            '<div class="r"><a class="icon-cancel-1 close" href="#">&nbsp;</a></div>',
+            '<div class="r"><a class="icon-cancel close" href="#">&nbsp;</a></div>',
             '</div>'
         );
 
