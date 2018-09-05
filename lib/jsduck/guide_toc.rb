@@ -21,7 +21,7 @@ module JsDuck
            level = $2.to_i - 1 # ignore <h1>
            text = Util::HTML.strip_tags($3)
            id = guide_name + "-section-" + title_to_id(text)
-           if (1...max_level).include? level
+           if (1...max_level).include? level            
             if level == previous_level
               # Add new list item to current ul
               toc << "<li><a href='#!/guide/#{id}'>#{text}</a>"
@@ -29,7 +29,7 @@ module JsDuck
             if level > previous_level
               # Open a new ul for each additional level
               # then add the list item
-              uls_to_open = level - previous_level
+              uls_to_open = level - previous_level                     
               for i in 1..uls_to_open
                 toc << "<ul>"
               end
@@ -38,7 +38,7 @@ module JsDuck
             if level < previous_level
               # Close all previously opened <ul>s between the previous and current heading levels
               # then add the list item
-              uls_to_close = previous_level - level
+              uls_to_close = previous_level - level       
               for i in 1..uls_to_close
                 toc << "</ul>"
               end

@@ -70,7 +70,7 @@ Ext.define('Docs.view.Tabs', {
                     '<span class="icn {iconCls}">&nbsp;</span>',
                     '<a class="tabUrl main-tab" href="{href}">{text}</a>',
                 '</div>',
-            '<div class="r"><a class="icon-cancel-1 close" href="#">&nbsp;</a></div>',
+            '<div class="r"><a class="icon-cancel close" href="#">&nbsp;</a></div>',
             '</div>'
         );
 
@@ -506,7 +506,7 @@ Ext.define('Docs.view.Tabs', {
      * @return {Number} Width of the tab bar (not including the static tabs)
      */
     tabBarWidth: function() {
-        //  Ti change -- adjustment from -15 to -50 
+        //  Ti change -- adjustment from -15 to -50
         return this.getWidth() - ((this.staticTabs.length + 1) * 50) - 50;
     },
 

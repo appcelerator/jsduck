@@ -34,3 +34,4 @@ module JsDuck::Tag
     end
   end
 end
+

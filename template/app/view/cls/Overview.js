@@ -244,7 +244,7 @@ Ext.define('Docs.view.cls.Overview', {
             var name = m.name;
 
             // List of all supported platforms
-            var availablePlatforms = ["android", "ipad", "iphone", "mobileweb", "windowsphone"];
+            var availablePlatforms = ["android", "ipad", "iphone", "windowsphone"];
 
             m.meta.platforms = {};
             m.meta.classPlatforms = {};

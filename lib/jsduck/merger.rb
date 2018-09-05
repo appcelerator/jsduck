@@ -127,7 +127,7 @@ module JsDuck
           :type => ex[:type] || im[:type] || "Object",
           :name => ex[:name] || im[:name] || "",
           :doc => ex[:doc] || im[:doc] || "",
-          ## merge conflict old code
+          ## merge conflict old code 
           ## :doc => doc,
           :deprecated => ex[:deprecated] || false,
           :platforms => ex[:platforms] || nil,

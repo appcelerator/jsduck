@@ -33,7 +33,7 @@ $appc-red: #9B1C1F;
     }
 }
 
-#center-container{
+#center-container {
     h1 {
         color: $appc-red !important;
         font-size: 16pt !important;
@@ -48,24 +48,47 @@ $appc-red: #9B1C1F;
 
     .thumb-list {
         h2 {
-            border-bottom: 2px solid $appc-gray !important;
+            border-bottom: 1px solid #cacaca !important; /* TIDOC-3196 */
 
             div {
                 color: #314e64 !important;
-                font-size: 14pt !important;
+                font-size: 13pt !important; /* TIDOC-3196 */
             }
         }
 
-        dd h4 {
-            font-size: 10pt !important;
-            padding: 5px 0 !important;
-        }
+        /* start TIDOC-3196 update */
+        dd {
+            height: auto!important;
+            width: auto!important;
+            margin: 20px 10px 0 0;
+
+            h4 {
+                font-size: 11pt !important;
+                padding: 5px 0 !important;
+                line-height: 22px;
+                text-align: center;
+            }
+
+            .thumb {
+                display: none;
+            }
+
+            div {
+                float: none;
+                margin-left: 0;
+                width: auto;
+                background: #f9f9f9;
+                padding: 10px 15px;
+            }
     }
+    /* end TIDOC-3196 update */
 
     .class-categories {
         .section {
-            background: none;
+            background: #fbfbfb; /* TIDOC-3196 */
             border: none;
+            -webkit-box-shadow: 0 2px 6px #e8e8e8; /* TIDOC-3196 */
+            box-shadow: 0 2px 6px #e8e8e8; /* TIDOC-3196 */
 
             h1 {
                 color: $appc-gray !important;
@@ -81,6 +104,7 @@ $appc-red: #9B1C1F;
             }
         }
     }
+  }
 }
 
 
@@ -111,30 +135,37 @@ $appc-red: #9B1C1F;
 
 .platform-android {
     background-image: url(../images/icon_android.png);
+    background-size: 25px 28px;
 }
 
 .platform-iphone {
     background-image: url(../images/icon_iphone.png);
+    background-size: 28px 28px;
 }
 
 .platform-ipad {
     background-image: url(../images/icon_ipad.png);
+    background-size: 28px 28px;
 }
 
 .platform-mobileweb {
     background-image: url(../images/icon_mobileweb.png);
+    background-size: 26px 26px;
 }
 
 .platform-tizen {
     background-image: url(../images/icon_tizen.png);
+    background-size: 28px 28px;
 }
 
 .platform-blackberry {
     background-image: url(../images/icon_blackberry.png);
+    background-size: 28px 28px;
 }
 
 .platform-windowsphone {
     background-image: url(../images/icon_windowsphone.png);
+    background-size: 25px 28px;
 }
 
 .sidebar {
@@ -162,7 +193,7 @@ $appc-red: #9B1C1F;
     clear: none;
 }
 
-.doc-contents, .members{
+.doc-contents, .members {
     .platforms {
         @include clearfix;
 
@@ -262,6 +293,15 @@ $appc-red: #9B1C1F;
     right: 35px;
 }
 
+#center-container .print { /* TIDOC-3196 */
+    background-image: url(../images/print.png);
+    right: 15px;
+    top: 13px;
+    width: 20px;
+    height: 20px;
+    background-size: 20px 20px;
+}
+
 #platformComparison {
     margin: 0 0 0 25px;
 }
@@ -273,7 +313,7 @@ $appc-red: #9B1C1F;
    font-weight: bold;
    border-width: 0;
    color: #555;
-   padding: 5px;    
+   padding: 5px;
 }
 
 .x-toolbar .x-toolbar-text {
@@ -465,3 +505,23 @@ $appc-red: #9B1C1F;
 .confluence-embedded-image.image-right {
 	float: right;
 }
+
+/* start TIDOC-3196 update */
+.doctabs .doctab .m a.tabUrl {
+    padding: 0 9px 0 12px;
+}
+
+.doctabs .doctab .m a.main-tab {
+    padding: 0 14px 0 19px;
+}
+
+.guide-overview {
+    margin-bottom: 20px;
+}
+
+#treecontainer .x-grid-cell-inner {
+    .icon-guide, .icon-class {
+        display: none;
+    }
+}
+/* end TIDOC-3196 update */

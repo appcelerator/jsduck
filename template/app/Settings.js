@@ -20,7 +20,7 @@ Ext.define("Docs.Settings", {
             "android": true,
             "iphone": true,
             "ipad": true,
-            "mobileweb": true,
+            "mobileweb": false,
             "windowsphone": true
         },
         comments: {

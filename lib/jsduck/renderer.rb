@@ -11,11 +11,8 @@ module JsDuck
       @opts = opts
       @pretty_platform_name = {
         'android' => 'Android',
-        'blackberry' => 'BlackBerry',
         'iphone' => 'iPhone',
         'ipad' => 'iPad',
-        'mobileweb' => 'Mobile Web',
-        'tizen' => 'Tizen',
         'windowsphone' => 'Windows Phone'
       }
     end
@@ -86,10 +83,10 @@ module JsDuck
         '<ul class="',
         sidebar ? 'sidebar-platforms' : 'platforms',
         '">',
-        platforms.map do |platform| 
+        platforms.map do |platform|
         	begin
                 name, version = platform.split()
-	        	"<li class='platform-" + name + "' title='" + @pretty_platform_name[name] + " since Titanium SDK "+version+"'>" + (sidebar ? (@pretty_platform_name[name] + " "+ version)  : '&nbsp;') + "</li>" 
+	        	"<li class='platform-" + name + "' title='" + @pretty_platform_name[name] + " since Titanium SDK "+version+"'>" + (sidebar ? (@pretty_platform_name[name] + " "+ version)  : '&nbsp;') + "</li>"
 	        rescue
 	    	    puts "[ERROR] Unknown platform: '" + platform + "'"
     	    end
@@ -103,9 +100,9 @@ module JsDuck
         '<ul class="',
         sidebar ? 'sidebar-platforms' : 'platforms',
         '">',
-        platforms.map do |platform| 
+        platforms.map do |platform|
         	begin
-	        	"<li class='platform-" + platform + "' title='" + @pretty_platform_name[platform]+"' >" + (sidebar ? (@pretty_platform_name[platform])  : '&nbsp;') + "</li>" 
+	        	"<li class='platform-" + platform + "' title='" + @pretty_platform_name[platform]+"' >" + (sidebar ? (@pretty_platform_name[platform])  : '&nbsp;') + "</li>"
 	        rescue
 	    	    puts "[ERROR] Unknown platform: '" + platform + "'"
     	    end
@@ -151,7 +148,7 @@ module JsDuck
 
     def render_files
       # We don't need to output this section since we don't have real JS sources
-      return 
+      return
       return if @cls[:files].length == 0 || @cls[:files][0][:filename] == ""
       return [
         "<h4>Files</h4>",
@@ -224,7 +221,7 @@ module JsDuck
         {:type => :css_mixin, :title => "CSS Mixins"}
       ]
 
-      render_configs_section + sections.map {|sec| render_section(sec) } 
+      render_configs_section + sections.map {|sec| render_section(sec) }
     end
 
     def render_configs_section
@@ -437,8 +434,8 @@ module JsDuck
       end
       examples = member[:examples]
       # Skip rendering empty sections
-      if examples.length > 0 
-        ex_section = [ 
+      if examples.length > 0
+        ex_section = [
             "<div class='examples-section'>",
             "<h3 class='examples-title icon-examples'>Examples</h3>" ]
         examples.each do |ex|
@@ -457,8 +454,8 @@ module JsDuck
       if !@opts.platform_names.has_key?(example[:platform])
         return []
       end
-      
-      return [ 
+
+      return [
       "<div class='example example-#{example[:platform]}' platform='#{example[:platform]}' platform_name='#{@opts.platform_names[example[:platform]]}'>",
       example[:doc],
       "</div>"

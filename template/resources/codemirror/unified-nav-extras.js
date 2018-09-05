@@ -116,10 +116,9 @@ var AppcDocsSite = {
 			AppcDocsSite.prev = (startIndex - 10 < 0) ? 0 : startIndex - 10;
 			AppcDocsSite.currentResults = results;
 			last += '<div id="appc-docs-results-last">';
-			last += '<b id="appc-docs-results-prev" class="icon-collapse-left" onClick="AppcDocsSite.displayResults(AppcDocsSite.currentResults, AppcDocsSite.prev)"></b>';
+			last += '<b id="appc-docs-results-prev" class="icon-collapse-left" onClick="AppcDocsSite.displayResults(AppcDocsSite.currentResults, AppcDocsSite.prev)">&#60;</b>';
 			last += '<span id="appc-docs-results-stats">' + (startIndex + 1) + ' - ' + endValue + ' / ' + results.length + '</span>';
-			last += '<b id="appc-docs-results-next" class="icon-expand-right" onClick="AppcDocsSite.displayResults(AppcDocsSite.currentResults, AppcDocsSite.next)"></b>';
-			last += '</div>';
+			last += '<b id="appc-docs-results-next" class="icon-expand-right" onClick="AppcDocsSite.displayResults(AppcDocsSite.currentResults, AppcDocsSite.next)">&#62;</b>';
 		}
 		searchField.insertAdjacentHTML('afterbegin', items.join('\n') + last);
 	},
@@ -314,4 +313,3 @@ var AppcDocsSite = {
 };
 
 $(document).ready(AppcDocsSite.doLoad);
-

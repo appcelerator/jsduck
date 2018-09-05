@@ -8,29 +8,29 @@
   //@include vertical-gradient(#074e7c, #095f93);
   .dropdown {
     padding-right: 15px;
-    padding-left: 8px; 
+    padding-left: 8px;
     text-align: left;
     border-radius: 30px;
     border-width: 2px;
-    border-color: #fff; } 
-    
+    border-color: #fff; }
+
   .x-btn-default-small {
     background-image: none !important;
     background-color: transparent;
     color: #fff; }
-  
+
   .x-btn-default-small-focus {
     background-image: none !important;
     background-color: transparent;
     color: #aaa; }
 
   .x-btn-inner {
-    font: 15px "Helvetica Neue",helvetica,arial,clean,sans-serif; 
+    font: 15px "Helvetica Neue",helvetica,arial,clean,sans-serif;
     color: #fff; }
 
   .x-btn-arrow {
     background-image: url('../images/down-arrow.png'); }
-  
+
   .x-btn-arrow-right {
     padding-right: 20px; }
 
@@ -60,8 +60,8 @@
 #header-content-menu {
       display: none; }
 
-// Add rule between title and doc tabs 
-#doc-topnav-container { 
+// Add rule between title and doc tabs
+#doc-topnav-container {
     background: url("../images/top-border.png") repeat-x 0px 42px; }
 
 // Title
@@ -166,7 +166,8 @@
         color: gray; }
       &.removed {
         color: gray;
-        text-decoration: line-through; } }
+        // text-decoration: line-through; 
+      } }
     .class {
       font-size: 0.85em;
       overflow: hidden;
@@ -180,8 +181,6 @@
     left: 4px;
     width: 18px;
     height: 18px; }
-
-  // Here also the auto-generated class icons apply
   @include icons;
 
   .meta {

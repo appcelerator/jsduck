@@ -1,5 +1,9 @@
+# require 'yaml'
+# YAML::ENGINE.yamler = 'syck'
 require 'yaml'
-YAML::ENGINE.yamler = 'syck'
+if RUBY_VERSION != '1.8.7' && RUBY_VERSION < '2.0.0'
+  YAML::ENGINE.yamler = 'syck'
+end
 
 module JsDuck
   # Represents one YAML file documenting a REST object
@@ -48,7 +52,7 @@ module JsDuck
 
     # Parses the YAML file
     def parse
-      begin 
+      begin
         data = YAML.load(@contents)
       rescue Exception => e
         print "Error: failed to parse " + @filename
@@ -96,7 +100,7 @@ module JsDuck
     end
 
     def parse_method(method)
-        methodHash = { 
+        methodHash = {
             :tagname => :method,
             :name => method["name"],
             :deprecated => false,
@@ -110,7 +114,7 @@ module JsDuck
             },
             :url => "Error: No URL set for this method.",
             :httpMethod => "GET",
-            :return => { 
+            :return => {
                 :type => "undefined"
             },
             :examples => []
@@ -167,7 +171,7 @@ module JsDuck
     end
 
     def parse_property(prop)
-        propHash = { 
+        propHash = {
             :tagname => :property,
             :files => [ @fakefile ],
             :optional => true,
@@ -191,7 +195,7 @@ module JsDuck
     end
 
     def parse_example(ex)
-        exampleHash = { 
+        exampleHash = {
             :tagname => :example,
             :name => "example-" + ex["platform"],
             :files => [ @fakefile ],
@@ -205,7 +209,7 @@ module JsDuck
     end
 
     def parse_parameter(param)
-        paramHash = { 
+        paramHash = {
             :name  => param["name"],
             :doc => param["description"]
         }

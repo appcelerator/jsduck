@@ -31,6 +31,7 @@ function decode_file($filename) {
 }
 
 // Turns #! links into ?print= links when in print mode.
+//
 // <a href="#!/api/Ext.Element">  -->  <a href="?print=/api/Ext.Element">
 // <a href="#!/api/Ext.Element-cfg-id">  -->  <a href="?print=/api/Ext.Element#cfg-id">
 //

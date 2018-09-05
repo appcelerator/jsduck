@@ -3,8 +3,7 @@
 @import "mixins";
 
 .doctabs {
-  // Here also the auto-generated class icons apply.
-
+  @include icons;
   padding-left: 10px;
   height: 45px;
   margin-top: 10px;
@@ -51,7 +50,7 @@
       height: 45px;
       overflow: hidden;
       white-space: nowrap;
-      font-family: FontAwesome, 'Open Sans', "Heletica Neue", Arial, sans-serif;
+      font-family: FontAwesome, 'Open Sans', 'Heletica Neue', Arial, sans-serif;
       border-width: 1px 1px 0 1px;
       border-style: solid;
       border-color: #cccccc;
@@ -182,3 +181,4 @@
       color: #666; } }
   .x-menu-item-icon.close {
     background: url(../images/x12.png) no-repeat 4px 4px; } }
+

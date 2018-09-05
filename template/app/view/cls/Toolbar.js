@@ -89,8 +89,7 @@ Ext.define('Docs.view.cls.Toolbar', {
             }
         }
 
-        // For Ti, public/protected/private are not used currently. Set them to true and
-		// don't show them.
+        // For Ti, public/protected/private are not used currently. Set them to true and don't show them.
         this.checkItems = {
             "public": {checked: true}, //this.createCb("Public", "public"),
             "protected": {checked: true}, //this.createCb("Protected", "protected"),
@@ -102,7 +101,7 @@ Ext.define('Docs.view.cls.Toolbar', {
             "android": this.createCb("Android", "android"),
             "iphone": this.createCb("iPhone", "iphone"),
             "ipad": this.createCb("iPad", "ipad"),
-            "mobileweb": this.createCb("Mobile Web", "mobileweb"),
+            // "mobileweb": this.createCb("Mobile Web", "mobileweb"),
             "windowsphone": this.createCb("Windows Phone", "windowsphone")
         };
 

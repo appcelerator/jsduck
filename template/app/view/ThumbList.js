@@ -100,7 +100,7 @@ Ext.define('Docs.view.ThumbList', {
 
         // Place itemTpl inside main template
         this.tpl = new Ext.XTemplate(Ext.Array.flatten([
-            '<div>',
+            '<div class="guide-overview">', // TIDOC-3196
                 '<tpl for=".">',
                 '<div><a name="{id}"></a><h2><div>{title}</div></h2>',
                 '<dl>',
