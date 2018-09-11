@@ -1,0 +1,419 @@
+/* Misc ******************************************************************************************/
+
+.container .error {
+    background-color: #FFCCCC;
+}
+
+.container .content img {
+    max-width: 100%;
+    border: 0 none;
+}
+
+.container .content img.confluence-content-image-border {
+    border: 1px solid black;
+}
+
+.container .caption {
+    font-weight: bold;
+    padding-top: 0.5em;
+}
+
+
+/* Paragraphs ************************************************************************************/
+
+.container li p {
+    margin: 0;
+}
+
+.container ol,
+.container ul {
+    padding-left: 3em;
+}
+
+.container p.last,
+.container p:last-child {
+    margin-bottom: 0;
+}
+
+
+/* Tables */
+.container table {
+    border-collapse: collapse;
+    border: 1px solid red;
+    margin-bottom: 1em;
+    width: auto;
+}
+
+.container table tr {
+    page-break-inside: avoid;
+}
+
+.container table thead tr td {
+    background-color: #F0F0F0;
+    border: 1px solid #DDDDDD;
+    min-width: 0.6em;
+    padding: 5px;
+    text-align: left;
+    vertical-align: top;
+    font-weight: bold;
+    color: #003366;
+}
+
+.container table tbody tr td {
+    border: 1px solid #DDDDDD;
+    min-width: 0.6em;
+    padding: 5px;
+    vertical-align: top;
+}
+
+.container tbody tr:nth-child(2n) td,
+.container tbody tr.even td {
+    background-color: transparent;
+}
+
+.container tbody tr:nth-child(2n-1) td,
+.container tbody tr.even td {
+    background-color: #FCFCFC;
+}
+
+.container table td p {
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+th.confluenceTh,
+th.confluenceTh > p,
+.content tbody tr td.confluenceTh,
+.content tbody tr td.confluenceTh > p {
+    font-weight: bold;
+}
+
+th.confluenceTh,
+th.confluenceTh > p,
+td.highlight,
+td.highlight > p,
+td.highlight-grey,
+td.highlight-grey > p,
+.content tbody tr td.confluenceTh,
+.content tbody tr td.confluenceTh > p,
+.content tbody tr td.highlight,
+.content tbody tr td.highlight > p,
+.content tbody tr td.highlight-grey,
+.content tbody tr td.highlight-grey > p {
+    background-color: #F0F0F0;
+}
+
+th.note,
+th.note > p,
+td.highlight.note,
+td.highlight.note > p,
+td.highlight-yellow,
+td.highlight-yellow > p,
+.content tbody tr td.highlight.note,
+.content tbody tr td.highlight.note > p,
+.content tbody tr td.highlight-yellow,
+.content tbody tr td.highlight-yellow > p {
+    background-color: #FFFFDD;
+}
+
+th.info,
+th.info > p,
+td.highlight.info,
+td.highlight.info > p,
+td.highlight-blue,
+td.highlight-blue > p,
+.content tbody tr td.highlight.info,
+.content tbody tr td.highlight.info > p,
+.content tbody tr td.highlight-blue,
+.content tbody tr td.highlight-blue > p {
+    background-color: #E0F0FF;
+}
+
+th.success,
+th.success > p,
+td.highlight.success,
+td.highlight.success > p,
+td.highlight-green,
+td.highlight-green > p,
+.content tbody tr td.highlight.success,
+.content tbody tr td.highlight.success > p,
+.content tbody tr td.highlight-green,
+.content tbody tr td.highlight-green > p {
+    background-color: #DDFADE;
+}
+
+th.warning,
+th.warning > p,
+td.highlight.warning,
+td.highlight.warning > p,
+td.highlight-red,
+td.highlight-red > p,
+.content tbody tr td.highlight.warning,
+.content tbody tr td.highlight.warning > p,
+.content tbody tr td.highlight-red,
+.content tbody tr td.highlight-red > p {
+    background-color: #FFE7E7;
+}
+
+
+/* Section / Column Tables */
+
+table.sectionMacro,
+table.sectionMacroWithBorder {
+    margin-bottom: 1em;
+    width: 100%;
+}
+table.sectionMacro {
+    border: none;
+}
+table.sectionMacroWithBorder {
+    border: 1px solid #DDDDDD;
+}
+
+
+table.sectionMacro td,
+table.sectionMacroWithBorder td {
+    vertical-align: top;
+}
+table.sectionMacro td {
+    border: none;
+}
+table.sectionMacroWithBorder td {
+    border: 1px solid #DDDDDD;
+}
+
+
+/* Panels, Admonitions *************************************************************/
+
+.container .confbox {
+    margin-bottom: 1.5em;
+    margin-top: 1.5em;
+    border: 1px solid #BBBBBB;
+    background-color: #F0F0F0;
+    border-radius: 5px;
+    page-break-inside: avoid;
+}
+
+.container .confbox .title {
+    font-weight: bold;
+    padding-bottom: 1em;
+    margin-top: 0;
+}
+
+.container .panel {
+    padding: 1em;
+}
+
+.container .admonition {
+    padding: 1em 1em 1em 3em;
+    background-repeat: no-repeat;
+    background-position: 0.75em 1em;
+}
+
+.container .admonition-warning {
+    background-image: url(../images/icons/delete.png);
+    background-color: #FFE7E7;
+    border-color: #DF9898;
+}
+
+.container .admonition-note {
+    background-image: url(../images/icons/error.png);
+    background-color: #FFFFDD;
+    border-color: #F7DF92;
+}
+
+.container .admonition-info {
+    background-image: url(../images/icons/information.png);
+    background-color: #E0EFFF;
+    border-color: #9EB6D4;
+}
+
+.container .admonition-tip {
+    background-image: url(../images/icons/accept.png);
+    background-color: #DDFADE;
+    border-color: #9EC49F;
+}
+
+/* Blockquote ************************************************************************************/
+
+.container blockquote {
+    border-left: 1px solid #3C78B5;
+    color: #222222;
+    font-style: italic;
+    margin: 1.5em 1em;
+    padding-left: 1em;
+}
+
+
+/* Lists *****************************************************************************************/
+
+.content ol,
+.content ol ol ol ol,
+.content ol ol ol ol ol ol ol,
+.content ol ol ol ol ol ol ol ol ol ol {
+    list-style-type: decimal;
+}
+
+.content ol ol,
+.content ol ol ol ol ol,
+.content ol ol ol ol ol ol ol ol,
+.content ol ol ol ol ol ol ol ol ol ol ol {
+    list-style-type: lower-alpha;
+}
+
+.content ol ol ol,
+.content ol ol ol ol ol ol,
+.content ol ol ol ol ol ol ol ol ol,
+.content ol ol ol ol ol ol ol ol ol ol ol ol {
+    list-style-type: lower-roman;
+}
+
+.container .inline-task-list li {
+    list-style: none;
+    padding-left: 22px;
+    margin-left: -22px;
+    background-repeat: no-repeat;
+    background-size: 16px 16px;
+    background-image: url('../images/icons/checkbox-unchecked.png');
+}
+
+.container .inline-task-list li.checked {
+    background-image: url('../images/icons/checkbox-checked.png');
+}
+
+
+/* Status Macro **********************************************************************************/
+
+.content span.status {
+    display: inline-block;
+    min-width: 7.5em;
+    margin: 1px 0px;
+    padding: 2px 5px 2px 5px;
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 0.7em;
+    line-height: 1.1em;
+    font-weight: bold;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+}
+
+.content span.status.grey {
+    color: #333333;
+    background-color: #cccccc;
+    border: 1px solid #cccccc;
+}
+
+.content span.status.grey.subtle {
+    color: #333333;
+    background-color: #ffffff;
+    border: 1px solid #cccccc;
+}
+
+.content span.status.red {
+    color: #ffffff;
+    background-color: #d04437;
+    border: 1px solid #d04437;
+}
+
+.content span.status.red.subtle {
+    color: #d04437;
+    background-color: #ffffff;
+    border: 1px solid #f8d3d1;
+}
+
+.content span.status.green {
+    color: #ffffff;
+    background-color: #14892c;
+    border: 1px solid #14892c;
+}
+
+.content span.status.green.subtle {
+    color: #14892c;
+    background-color: #ffffff;
+    border: 1px solid #b2d8b9;
+}
+
+.content span.status.yellow {
+    color: #594300;
+    background-color: #ffd351;
+    border: 1px solid #ffd351;
+}
+
+.content span.status.yellow.subtle {
+    color: #594300;
+    background-color: #ffffff;
+    border: 1px solid #ffe28c;
+}
+
+.content span.status.blue {
+    color: #ffffff;
+    background-color: #4a6785;
+    border: 1px solid #4a6785;
+}
+
+.content span.status.blue.subtle {
+    color: #4a6785;
+    background-color: #ffffff;
+    border: 1px solid #e4e8ed;
+}
+
+
+/* Footer Area ***********************************************************************************/
+
+.container .footer {
+    color: silver;
+    font-size: 11px;
+    margin-top: 28px;
+    text-align: right;
+}
+
+.container .footer a {
+    color: silver;
+    text-decoration: underline;
+}
+
+/* Program Listings ******************************************************************************/
+
+div.programlisting {
+    padding: 0;
+    border-style: dashed;
+    background-color: transparent;
+    font-style: normal;
+}
+
+div.programlisting div.title {
+    padding: 0.5em 1em;
+}
+
+div.programlisting div {
+    padding: 1em;
+    background-color: transparent;
+}
+
+.syntaxhighlighter {font-family:"Consolas","Bitstream Vera Sans Mono","Courier New",Courier,monospace;}
+.syntaxhighlighter div.line {padding: 0; margin: 0; background-color: transparent;}
+.syntaxhighlighter div.line code {white-space: pre-wrap; word-wrap: break-word; tab-size: 4;}
+
+/* Default Syntax Highlighting Theme */
+.syntaxhighlighter{background-color:#fff;}
+.syntaxhighlighter .plain,
+.syntaxhighlighter .plain a{color: #000;}
+.syntaxhighlighter .comments,
+.syntaxhighlighter .comments a{color: #008200;}
+.syntaxhighlighter .string,
+.syntaxhighlighter .string a{color: #036;}
+.syntaxhighlighter .keyword{color: #369;font-weight: bold;}
+.syntaxhighlighter .preprocessor{color: gray;}
+.syntaxhighlighter .variable{color: #a70;}
+.syntaxhighlighter .value{color: #090;}
+.syntaxhighlighter .functions{color: #ff1493;}
+.syntaxhighlighter .constants{color: #0066CC;}
+.syntaxhighlighter .script{background-color: yellow;}
+.syntaxhighlighter .color1,
+.syntaxhighlighter .color1 a{color: #808080;}
+.syntaxhighlighter .color2,
+.syntaxhighlighter .color2 a{color: #ff1493;}
+.syntaxhighlighter .color3,
+.syntaxhighlighter .color3 a{color: red;}
