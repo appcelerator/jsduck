@@ -3,6 +3,7 @@ Gemfile*
 template/extjs*
 template/resources/css
 template/resources/sass/.sass-cache
+bin/yuicompressor.jar
 .sass-cache/
 template-min/
 sdk-vars.rb
