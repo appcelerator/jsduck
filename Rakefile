@@ -39,7 +39,7 @@ end
 # Compress JS/CSS file in-place
 # Using a hackish way to access yui-compressor
 def yui_compress(fname)
-  system "java -jar $(dirname $(which sencha))/bin/yuicompressor.jar -o #{fname} #{fname}"
+  system "java -jar bin/yuicompressor.jar -o #{fname} #{fname}"
 end
 
 # Reads in all CSS files referenced between BEGIN CSS and END CSS markers.
@@ -198,11 +198,15 @@ end
 
 # Download ExtJS into template/extjs
 task :get_extjs do
-  system "curl -o template/extjs.zip http://cdn.sencha.com/ext-4.1.1a-gpl.zip"
+  system "curl -o template/extjs.zip http://download.huihoo.com/extjs/ext-4.1.1a-gpl.zip"
   system "unzip template/extjs.zip -d template/"
   system "rm -rf template/extjs"
   system "mv template/ext-4.1.1a template/extjs"
   system "rm template/extjs.zip"
+end
+
+task :get_yuicompressor do
+  system "curl -o bin/yuicompressor.jar https://github.com/yui/yuicompressor/releases/download/v2.4.8/yuicompressor-2.4.8.jar"
 end
 
 # Auto-generate sdk-vars.rb config file
@@ -224,7 +228,7 @@ EXT_BUILD='#{Dir.pwd}/template/extjs'
 end
 
 desc "Download ExtJS and initialize sdk-vars.rb config file"
-task :configure => [:get_extjs, :config_file]
+task :configure => [:get_extjs, :get_yuicompressor, :config_file]
 
 # Run compass to generate CSS files
 task :sass do
