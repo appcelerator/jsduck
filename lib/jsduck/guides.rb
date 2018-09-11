@@ -43,7 +43,7 @@ module JsDuck
 
     def get_subitems(group, all_topics)
       if !group['items'].nil? && !group['items'].empty?
-        group['items'].each do |item| 
+        group['items'].each do |item|
           all_topics.push(item)
           get_subitems(item, all_topics)
         end
@@ -52,19 +52,19 @@ module JsDuck
 
     def get_all_items
       all_topics = []
-      @groups.each do |topic| 
+      @groups.each do |topic|
         all_topics.push(topic)
-      	get_subitems(topic, all_topics)
+        get_subitems(topic, all_topics)
       end
       return all_topics
     end
 
     # Overrides GroupedAsset to handle nested guides
-    # for Ti, names must be globally unique. 
+    # for Ti, names must be globally unique.
     #
     # Should be called from constructor after @groups have been read in,
     # and after it's been ensured that all items in groupes have names.
-    # 
+    #
     # Prints warning when there is a duplicate item within a group.
     # The warning message should say something like "duplicate <asset type>"
     def build_map_by_name(warning_msg)
@@ -96,15 +96,10 @@ module JsDuck
       end
     end
 
-
-    # Overrides GroupedAsset
     # Modified to_array that excludes the :html from guide nodes
     def to_array
-      get_all_items().map do |group|
-        {
-          "title" => group["title"],
-          "items" => group["items"].map {|g| Hash[g.select {|k, v| k != :html }] }
-        }
+      map_items do |item|
+        Hash[item.select {|k, v| k != :html && k != :filename && k != "url" }]
       end
     end
 
@@ -134,7 +129,7 @@ module JsDuck
         end
       else
         return Logger.warn(:guide, "No README.html or README.md in #{guide["url"]}")
-      end    
+      end
     end
 
     def format_guide(guide, guide_file)
@@ -194,11 +189,6 @@ module JsDuck
       end
     end
 
-    # Returns all guides as array
-    def to_array
-      @groups
-    end
-
     def topic2html(group, deepness)
       res = []
       res.push("<li><h${deepness}><a href='#!/guide/#{group['name']}'>#{group['title']}</a></h#{deepness}>")
@@ -215,7 +205,7 @@ module JsDuck
 
     # Returns HTML listing of guides
     def to_html(style="")
-      html = @groups.map { |topic| topic2html(topic, 1)}.flatten.join("\n") 
+      html = @groups.map { |topic| topic2html(topic, 1)}.flatten.join("\n")
 
 #      html = @guides.map do |group|
 #        [
