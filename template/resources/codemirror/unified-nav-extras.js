@@ -224,20 +224,20 @@ var AppcDocsSite = {
 								api_name,
 								elem = {},
 								re,
-								icon = 'icon-link';
+								icon = 'platform-icon-link';
 
 							// Determine API type
 							if (doc.url.match(/\-method\-/g)) {
 								api_type = 'method';
-								icon = 'icon-cog';
+								icon = 'platform-icon-cog';
 							}
 							else if (doc.url.match(/\-event\-/g)) {
 								api_type = 'event';
-								icon = 'icon-flash';
+								icon = 'platform-icon-flash';
 							}
 							else if (doc.url.match(/\-property\-/g)) {
 								api_type = 'property';
-								icon = 'icon-menu';
+								icon = 'platform-icon-menu';
 							}
 
 							api_name = tokens[tokens.length - 1];
@@ -302,7 +302,7 @@ var AppcDocsSite = {
 		dropdown = document.getElementById('appc-docs-products');
 		dropdown.onclick = AppcDocsSite.displayMenu;
 
-		rightside[0].insertAdjacentHTML('afterbegin', '<span><div id="appc-docs-search"><i class="icon-search-1"></i><input type="text" id="appc-docs-search-form" placeholder="Search Docs"></input><i id="appc-docs-search-cancel" class="icon-cancel-1"></i></div><div id="appc-docs-search-results"/></span>');
+		rightside[0].insertAdjacentHTML('afterbegin', '<span><div id="appc-docs-search"><i class="platform-icon-search"></i><input type="text" id="appc-docs-search-form" placeholder="Search Docs"></input><i id="appc-docs-search-cancel" class="platform-icon-cancel"></i></div><div id="appc-docs-search-results"/></span>');
 		searchForm = document.getElementById('appc-docs-search-form');
 		searchForm.onkeyup = AppcDocsSite.delayedSearch;
 		searchForm.onblur = AppcDocsSite.dismissResults;

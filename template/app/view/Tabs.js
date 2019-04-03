@@ -70,7 +70,7 @@ Ext.define('Docs.view.Tabs', {
                     '<span class="icn {iconCls}">&nbsp;</span>',
                     '<a class="tabUrl main-tab" href="{href}">{text}</a>',
                 '</div>',
-            '<div class="r"><a class="icon-cancel close" href="#">&nbsp;</a></div>',
+            '<div class="r"><a class="platform-icon-cancel close" href="#">&nbsp;</a></div>',
             '</div>'
         );
 
@@ -180,10 +180,10 @@ Ext.define('Docs.view.Tabs', {
 
         switch(tab.iconCls) {
             case "icon-class":
-                tab.iconCls = 'icon-link';
+                tab.iconCls = 'platform-icon-link';
                 break;
             case "icon-guide":
-                tab.iconCls = 'icon-doc-text';
+                tab.iconCls = 'platform-icon-doc-text';
                 break;
             case "icon-video":
                 tab.iconCls = 'fa-video-camera';
@@ -213,7 +213,7 @@ Ext.define('Docs.view.Tabs', {
             var fullClsName = tab.href.replace(/^.*#!?\/api\//, "");
             tab.text = Docs.ClassRegistry.shortName(fullClsName);
             tab.tooltip = fullClsName;
-            tab.iconClass = 'icon-link';
+            tab.iconClass = 'platform-icon-link';
         }
         else {
             tab.tooltip = tab.text;
