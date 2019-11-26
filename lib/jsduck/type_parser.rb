@@ -68,6 +68,19 @@ module JsDuck
         "undefined" => "undefined",
         "void" => "void",
       }
+      @builtins = {
+        "Array" => "<a href=\"https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array\">Array</a>",
+        "Boolean" => "<a href=\"https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean\">Boolean</a>",
+        "Date" => "<a href=\"https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date\">Date</a>",
+        "Error" => "<a href=\"https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Error\">Error</a>",
+        "Function" => "<a href=\"https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function\">Function</a>",
+        "Number" => "<a href=\"https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number\">Number</a>",
+        "Object" => "<a href=\"https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object\">Object</a>",
+        "RegExp" => "<a href=\"https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/RegExp\">RegExp</a>",
+        "String" => "<a href=\"https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String\">String</a>",
+        "null" => "<a href=\"https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/null\">null</a>",
+        "undefined" => "<a href=\"https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/null\">undefined</a>",
+      }
     end
 
     # Parses the type definition
@@ -340,9 +353,13 @@ module JsDuck
       elsif @primitives[name]
         if @relations[@primitives[name]]
           @out << @formatter.link(@primitives[name], nil, name)
+        elsif @builtins[@primitives[name]]
+          @out << @builtins[name]
         else
           @out << name
         end
+      elsif @builtins[name]
+        @out << @builtins[name]
       elsif @relations.ignore?(name) || name == "*"
         @out << name
       else
