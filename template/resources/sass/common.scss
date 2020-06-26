@@ -393,7 +393,12 @@ div.programlisting div {
 }
 
 .syntaxhighlighter {font-family:"Consolas","Bitstream Vera Sans Mono","Courier New",Courier,monospace;}
-.syntaxhighlighter div.line {padding: 0; margin: 0; background-color: transparent;}
+.syntaxhighlighter div.line, .syntaxhighlighter div.line pre.prettyprint {
+    padding: 0;
+    margin: 0;
+    background-color: transparent;
+    border: none;
+}
 .syntaxhighlighter div.line code {white-space: pre-wrap; word-wrap: break-word; tab-size: 4;}
 
 /* Default Syntax Highlighting Theme */
