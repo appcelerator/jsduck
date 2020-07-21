@@ -389,7 +389,7 @@ module JsDuck
       end
 
       # Titanium wrapped types
-      if /Dictionary|Array|Callback/.match(name) && @input.scan(/</)
+      if /Dictionary|Array|Callback|Promise|Set|Map/.match(name) && @input.scan(/</)
         @out << "&lt;"
         return false unless type_arguments
         return false unless @input.scan(/>/)
